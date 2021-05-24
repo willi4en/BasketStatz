@@ -1,0 +1,15 @@
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\bin\Debug\BasketStatz.exe.config
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\bin\Debug\BasketStatz.exe
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\bin\Debug\BasketStatz.pdb
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.csprojAssemblyReference.cache
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\Views\MainWindow.g.cs
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\App.g.cs
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz_MarkupCompile.cache
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz_MarkupCompile.lref
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\Views\MainWindow.baml
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.g.resources
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.Properties.Resources.resources
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.csproj.GenerateResource.cache
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.csproj.CoreCompileInputs.cache
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.exe
+C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\BasketStatz.pdb
