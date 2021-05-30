@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\obj\Debug\
+C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\obj\Debug\
 BasketStatz
 none
 false
 DEBUG;TRACE
-C:\Users\Ethan\source\repos\BasketStatz\BasketStatz\App.xaml
-11892971807
+C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\App.xaml
+6-922274202
 
-51470816430
+151094395702
 13-1505183044
-Views\MainWindow.xaml;
+CustomControls\StatInputControl.xaml;Views\MainWindow.xaml;Views\PlayerGameStats_View.xaml;Views\PlayerStatInput_View.xaml;Views\TeamGameStats_View.xaml;Views\TeamSeasonStats_View.xaml;
 
 False
 

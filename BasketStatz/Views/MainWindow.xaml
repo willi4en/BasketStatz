@@ -4,11 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:BasketStatz"
+        xmlns:viewmodels="clr-namespace:BasketStatz.ViewModels"
+        xmlns:views="clr-namespace:BasketStatz.Views"
         mc:Ignorable="d"
         ResizeMode="CanResizeWithGrip"
         MinHeight="250" MinWidth="300"
         Title="MainWindow" Height="750" Width="1100">
 
+    <Window.DataContext>
+        <viewmodels:MainViewModel/>
+    </Window.DataContext>
+    
     <Window.Resources>
         <Style x:Key="MenuButton" TargetType="Button">
             <Setter Property="Height" Value="50"/>
@@ -17,6 +23,23 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="VerticalAlignment" Value="Top"/>
         </Style>
+
+        <DataTemplate DataType="{x:Type viewmodels:PlayerStatInput_VM}">
+            <views:PlayerStatInput_View DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:PlayerGameStats_VM}">
+            <views:PlayerGameStats_View DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:TeamGameStats_VM}">
+            <views:TeamGameStats_View DataContext="{Binding}"/>
+        </DataTemplate>
+
+        <DataTemplate DataType="{x:Type viewmodels:TeamSeasonStats_VM}">
+            <views:TeamSeasonStats_View DataContext="{Binding}"/>
+        </DataTemplate>
+
     </Window.Resources>
     
     <Grid>
@@ -39,7 +62,6 @@
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
@@ -70,11 +92,6 @@
 
             <!-- Opposing Team Time Outs-->
             <Button Grid.Column="7" Background="LightCoral" Margin="20,10,20,10" Content="TO: "/>
-            
-            <!-- Clock -->
-            <Border Grid.Column="8" Background="Cyan" Width="Auto" Height="50" >
-                <TextBlock Text="10:23" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="20"/>
-            </Border>
         </Grid>
         
         <!-- Player Panel-->
@@ -120,14 +137,15 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Background="LightBlue" Content="Input" FontSize="20" FontWeight="SemiBold"/>
-                <Button Grid.Column="1" Background="LightBlue" Content="Player Game Stats" FontSize="20" FontWeight="SemiBold"/>
-                <Button Grid.Column="2" Background="LightBlue" Content="Team Game Stats" FontSize="20" FontWeight="SemiBold"/>
-                <Button Grid.Column="3" Background="LightBlue" Content="Team Season Stats" FontSize="20" FontWeight="SemiBold"/>
+                <Button Grid.Column="0" Background="LightBlue" Content="Set Stats" FontSize="20" FontWeight="SemiBold" Click="SetStats_Click"/>
+                <Button Grid.Column="1" Background="LightBlue" Content="Player Game Stats" FontSize="20" FontWeight="SemiBold" Click="PlayerGameStats_Click"/>
+                <Button Grid.Column="2" Background="LightBlue" Content="Team Game Stats" FontSize="20" FontWeight="SemiBold" Click="TeamGameStats_Click"/>
+                <Button Grid.Column="3" Background="LightBlue" Content="Team Season Stats" FontSize="20" FontWeight="SemiBold" Click="TeamSeasonStats_Click"/>
             </Grid>
 
-            <Grid Grid.Row="1" Background="Beige">
-                
+            <!-- Display Panel -->
+            <Grid x:Name="DisplayGrid" Grid.Row="1" Background="Beige">
+                <ContentControl x:Name="displayContent" Content="{Binding}"/>
             </Grid>
             
         </Grid>

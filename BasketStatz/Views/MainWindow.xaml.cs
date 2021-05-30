@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using BasketStatz.ViewModels;
+using BasketStatz.Views;
 
 namespace BasketStatz
 {
@@ -24,5 +26,28 @@ namespace BasketStatz
         {
             InitializeComponent();
         }
+
+        private void SetStats_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PlayerStatInput_VM();
+        }
+
+        private void PlayerGameStats_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new PlayerGameStats_VM();
+        }
+
+        private void TeamGameStats_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new TeamGameStats_VM();
+        }
+
+        private void TeamSeasonStats_Click(object sender, RoutedEventArgs e)
+        {
+            DataContext = new TeamSeasonStats_VM();
+        }
+
+
+
     }
 }
