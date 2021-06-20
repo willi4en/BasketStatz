@@ -11,9 +11,9 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -23,9 +23,38 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="2"/>
+        <Label Grid.Row="0" Grid.Column="0" Content="Team Name" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="teamName_TextBlock" Grid.Row="1" Grid.Column="0" Text="Team Name" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
 
-        <controls:StatInputControl Title="REF" Grid.Row="1" Grid.Column="0" Margin="10,20,10,20"/>
+        <Label Grid.Row="0" Grid.Column="1" Content="Name" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="name_TextBlock" Grid.Row="1" Grid.Column="1" Text="Name" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+
+        <Image Grid.Row="0" Grid.RowSpan="2" Grid.Column="2"/>
+
+        <Label Grid.Row="0" Grid.Column="3" Content="Age" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="age_TextBlock" Grid.Row="1" Grid.Column="3" Text="20" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+
+        <Label Grid.Row="0" Grid.Column="4" Content="Height" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+        <TextBlock x:Name="height_TextBlock" Grid.Row="1" Grid.Column="4" Text="6' 7" VerticalAlignment="Top" HorizontalAlignment="Center" FontSize="20"/>
+
+        <controls:StatInputControl x:Name="pts_Stat" Title="PTS" Grid.Row="2" Grid.Column="0" Margin="10,20,10,20"/> <!-- Points Made-->
+        <controls:StatInputControl x:Name="fgm_Stat" Title="FGM" Grid.Row="2" Grid.Column="1" Margin="10,20,10,20"/> <!-- Field Goals Made-->
+        <controls:StatInputControl x:Name="fga_Stat" Title="FGA" Grid.Row="2" Grid.Column="2" Margin="10,20,10,20"/> <!-- Field Goals Attempted-->
+        <controls:StatInputControl x:Name="ftm_Stat" Title="FTM" Grid.Row="2" Grid.Column="3" Margin="10,20,10,20"/> <!-- Free Throws Made-->
+        <controls:StatInputControl x:Name="fta_Stat" Title="FTA" Grid.Row="2" Grid.Column="4" Margin="10,20,10,20"/> <!-- Free Throws Attempted-->
+        
+        <controls:StatInputControl x:Name="threeFGM_Stat" Title="3FGM" Grid.Row="3" Grid.Column="0" Margin="10,20,10,20"/> <!-- 3 Point Field Goals Made-->
+        <controls:StatInputControl x:Name="threeFGA_Stat" Title="3FGA" Grid.Row="3" Grid.Column="1" Margin="10,20,10,20"/> <!-- 3 Point Field Goals Attempted-->
+        <controls:StatInputControl x:Name="reb_Stat" Title="REB" Grid.Row="3" Grid.Column="2" Margin="10,20,10,20"/> <!-- Rebounds -->
+        <controls:StatInputControl x:Name="oreb_Stat" Title="OREB" Grid.Row="3" Grid.Column="3" Margin="10,20,10,20"/> <!-- Offensive Rebounds-->
+        <controls:StatInputControl x:Name="dreb_Stat" Title="DREB" Grid.Row="3" Grid.Column="4" Margin="10,20,10,20"/> <!-- Defensive Rebounds-->
+
+        <controls:StatInputControl x:Name="ast_Stat" Title="AST" Grid.Row="4" Grid.Column="0" Margin="10,20,10,20"/> <!-- Assists -->
+        <controls:StatInputControl x:Name="stl_Stat" Title="STL" Grid.Row="4" Grid.Column="1" Margin="10,20,10,20"/> <!-- Steals -->
+        <controls:StatInputControl x:Name="blk_Stat" Title="BLK" Grid.Row="4" Grid.Column="2" Margin="10,20,10,20"/> <!-- Blocks -->
+        <controls:StatInputControl x:Name="to_Stat" Title="TO" Grid.Row="4" Grid.Column="3" Margin="10,20,10,20"/> <!-- Turn Overs -->
+        <controls:StatInputControl x:Name="pf_Stat" Title="PF" Grid.Row="4" Grid.Column="4" Margin="10,20,10,20"/> <!-- Personal Fouls -->
+
 
     </Grid>
 </UserControl>

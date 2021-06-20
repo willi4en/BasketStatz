@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace BasketStatz.ViewModels
 {
-    class PlayerGameStats_VM
+    public class Menu_VM
     {
+
     }
 }

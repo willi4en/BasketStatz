@@ -6,7 +6,42 @@
              xmlns:local="clr-namespace:BasketStatz.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="Team Name: " VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="20" FontWeight="Bold"/>
+        <TextBlock Grid.Row="0" Grid.Column="1" Text="GameTestTeam" VerticalAlignment="Center" HorizontalAlignment="Left" FontSize="20"/>
+
+        <DataGrid Grid.Row="1" Grid.ColumnSpan="2">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Player" Width="2*"/>
+                <DataGridTextColumn Header="PTS" Width="*"/>
+                <DataGridTextColumn Header="FGM" Width="*"/>
+                <DataGridTextColumn Header="FGA" Width="*"/>
+                <DataGridTextColumn Header="FG%" Width="*"/>
+                <DataGridTextColumn Header="FTM" Width="*"/>
+                <DataGridTextColumn Header="FTA" Width="*"/>
+                <DataGridTextColumn Header="FT%" Width="*"/>
+                <DataGridTextColumn Header="3FGM" Width="*"/>
+                <DataGridTextColumn Header="3FGA" Width="*"/>
+                <DataGridTextColumn Header="3FG%" Width="*"/>
+                <DataGridTextColumn Header="REB" Width="*"/>
+                <DataGridTextColumn Header="OREB" Width="*"/>
+                <DataGridTextColumn Header="DREB" Width="*"/>
+                <DataGridTextColumn Header="AST" Width="*"/>
+                <DataGridTextColumn Header="STL" Width="*"/>
+                <DataGridTextColumn Header="BLK" Width="*"/>
+                <DataGridTextColumn Header="TO" Width="*"/>
+                <DataGridTextColumn Header="PF" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
     </Grid>
 </UserControl>

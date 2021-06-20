@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BasketStatz.ViewModels
 {
-    class PlayerStatInput_VM
+    public class PlayerStatInput_VM
     {
     }
 }

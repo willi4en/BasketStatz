@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\App.xaml
-6-922274202
+71568053990
 
-151094395702
-13-1505183044
-CustomControls\StatInputControl.xaml;Views\MainWindow.xaml;Views\PlayerGameStats_View.xaml;Views\PlayerStatInput_View.xaml;Views\TeamGameStats_View.xaml;Views\TeamSeasonStats_View.xaml;
+17-959220828
+1181307122910
+CustomControls\StatInputControl.xaml;Views\MainWindow.xaml;Views\Menu_View.xaml;Views\PlayerCareerStats_View.xaml;Views\PlayerStatInput_View.xaml;Views\TeamGameStats_View.xaml;Views\TeamSeasonStats_View.xaml;
 
 False
 
