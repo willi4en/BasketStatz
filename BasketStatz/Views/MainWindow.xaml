@@ -9,7 +9,7 @@
         mc:Ignorable="d"
         ResizeMode="CanResizeWithGrip"
         MinHeight="250" MinWidth="300"
-        Title="MainWindow" Height="750" Width="1100">
+        Title="BasketStatz" Height="750" Width="1100">
 
     <Window.DataContext>
         <viewmodels:MainViewModel/>
@@ -25,25 +25,21 @@
         </Style>
 
         <DataTemplate DataType="{x:Type viewmodels:Menu_VM}">
-            <views:Menu_View DataContext="{Binding}"/>
+            <views:Menu_View/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PlayerCareerStats_VM}">
+            <views:PlayerGameStats_View/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:PlayerStatInput_VM}">
+            <views:PlayerStatInput_View/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeamGameStats_VM}">
+            <views:TeamGameStats_View/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type viewmodels:TeamSeasonStats_VM}">
+            <views:TeamSeasonStats_View/>
         </DataTemplate>
         
-        <DataTemplate DataType="{x:Type viewmodels:PlayerStatInput_VM}">
-            <views:PlayerStatInput_View DataContext="{Binding}"/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewmodels:PlayerCareerStats_VM}">
-            <views:PlayerGameStats_View DataContext="{Binding}"/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewmodels:TeamGameStats_VM}">
-            <views:TeamGameStats_View DataContext="{Binding}"/>
-        </DataTemplate>
-
-        <DataTemplate DataType="{x:Type viewmodels:TeamSeasonStats_VM}">
-            <views:TeamSeasonStats_View DataContext="{Binding}"/>
-        </DataTemplate>
-
     </Window.Resources>
     
     <Grid>
@@ -61,35 +57,26 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="80"/>
                 <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="80"/>
-                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
             <!-- BasketStatz Logo -->
-            <Image Grid.Column="0" Margin="10,10,10,10"/>            
+            <TextBlock Grid.Column="0" Grid.ColumnSpan="2" Margin="10,10,10,10" Text="BasketStatz" FontSize="36" FontWeight="Black"/>            
 
-            <!-- Team Logo -->
-            <Image Grid.Column="2"/>
+            <TextBlock Grid.Column="2" Text="Home Team" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
             <!-- Team Score -->
-            <Border Grid.Column="3" Width="60" Height="55" Background="BlanchedAlmond">
-                <TextBlock  Text="0" TextAlignment="Center" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"/>
-            </Border>
-
-            <!-- Versus Image -->
-            <Image Grid.Column="4"/>
+            <Button Grid.Column="3" Width="60" Height="55" Background="Beige" FontSize="20" Content="{Binding HomeScore}" Command="{Binding AddToHomeScore}"/>
 
             <!-- Opposing Team Score -->
-            <Border Grid.Column="5" Width="60" Height="55" Background="BlanchedAlmond">
-                <TextBlock  Text="0" TextAlignment="Center" FontWeight="Bold" FontSize="20" VerticalAlignment="Center"/>
-            </Border>
+            <Button Grid.Column="5" Width="60" Height="55" Background="Beige" FontSize="20" Content="{Binding AwayScore}" Command="{Binding AddToAwayScore}"/>
 
-            <!-- Opposing Team Logo -->
-            <Image Grid.Column="6"/>
+            <TextBlock Grid.Column="6" Text="Away Team" FontSize="26" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
         <!-- Player Panel-->
@@ -102,19 +89,21 @@
             <TextBox Grid.Row="0" Height="30" MinWidth="180" Background="LightGray" Margin="10,0,10,0" VerticalAlignment="Center" HorizontalAlignment="Left"
                      Text="Search..." FontSize="20"/>
 
-            <ListBox Grid.Row="1" Width="Auto" Height="Auto" Background="LightBlue">
-                <ListBoxItem>
-                    <TextBlock Text="Player 1" FontSize="20"/>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <TextBlock Text="Player 2" FontSize="20"/>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <TextBlock Text="Player 3" FontSize="20"/>
-                </ListBoxItem>
-                <ListBoxItem>
-                    <TextBlock Text="Player 4" FontSize="20"/>
-                </ListBoxItem>
+            <ListBox x:Name="PlayerListBox" Grid.Row="1" Width="Auto" Height="Auto" Background="LightBlue" ItemsSource="{Binding GamePlayers}" SelectedItem="{Binding SelectedPlayer}">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border CornerRadius="5" BorderThickness="2" BorderBrush="DarkGray" Background="LightGray" Width="190" Height="24">
+                            <Grid Width="190" VerticalAlignment="Center">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="30"/>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Grid.Column="0" Text="{Binding Name}" Margin="5,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                                <TextBlock Grid.Column="1" Text="{Binding Number}" Margin="0,0,5,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
             </ListBox>
 
         </Grid>
@@ -128,23 +117,24 @@
             <!-- Stat Button Panel-->
             <Grid Grid.Row="0">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="200"/>
+                    <!--<ColumnDefinition Width="2*"/>
                     <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
-                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>-->
                 </Grid.ColumnDefinitions>
 
-                <Button Grid.Column="0" Background="LightBlue" Content="Menu" FontSize="20" FontWeight="SemiBold" Click="Menu_Click"/>
-                <Button Grid.Column="1" Background="LightBlue" Content="Set Stats" FontSize="20" FontWeight="SemiBold" Click="SetStats_Click"/>
-                <Button Grid.Column="2" Background="LightBlue" Content="Player Career Stats" FontSize="20" FontWeight="SemiBold" Click="PlayerGameStats_Click"/>
-                <Button Grid.Column="3" Background="LightBlue" Content="Team Game Stats" FontSize="20" FontWeight="SemiBold" Click="TeamGameStats_Click"/>
-                <Button Grid.Column="4" Background="LightBlue" Content="Team Season Stats" FontSize="20" FontWeight="SemiBold" Click="TeamSeasonStats_Click"/>
+                <Button Grid.Column="0" Background="LightBlue" Content="Menu" FontSize="20" FontWeight="SemiBold" Command="{Binding ChangeToMenu}"/>
+                <Button Grid.Column="1" Background="LightBlue" Content="Set Stats" FontSize="20" FontWeight="SemiBold" Command="{Binding ChangeToPlayerStat}"/>
+                <!--<Button Grid.Column="2" Background="LightBlue" Content="Player Career Stats" FontSize="20" FontWeight="SemiBold" Command="{Binding ChangeToPlayerCareerStat}"/>
+                <Button Grid.Column="3" Background="LightBlue" Content="Team Game Stats" FontSize="20" FontWeight="SemiBold" Command="{Binding ChangeToTeamGameStat}"/>
+                <Button Grid.Column="4" Background="LightBlue" Content="Team Season Stats" FontSize="20" FontWeight="SemiBold" Command="{Binding ChangeToTeamSeasonStat}"/>-->
             </Grid>
 
             <!-- Display Panel -->
             <Grid x:Name="DisplayGrid" Grid.Row="1" Background="Beige">
-                <ContentControl x:Name="displayContent" Content="{Binding}"/>
+                <ContentControl x:Name="displayContent" Content="{Binding CurrentViewModel}"/>
+                
             </Grid>
             
         </Grid>

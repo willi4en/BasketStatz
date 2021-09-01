@@ -35,7 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="MySql.Data, Version=8.0.25.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=8.0.26.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -59,6 +59,12 @@
     <Compile Include="CustomControls\StatInputControl.xaml.cs">
       <DependentUpon>StatInputControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\RelayCommand.cs" />
+    <Compile Include="Helpers\SQLInfo.cs" />
+    <Compile Include="Models\Game.cs" />
+    <Compile Include="Models\NewPlayer.cs" />
+    <Compile Include="Models\Player.cs" />
+    <Compile Include="ViewModels\Base_VM.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\Menu_VM.cs" />
     <Compile Include="ViewModels\PlayerCareerStats_VM.cs" />
@@ -144,7 +150,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Folder Include="Commands\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

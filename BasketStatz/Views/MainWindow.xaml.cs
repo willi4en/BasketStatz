@@ -22,38 +22,11 @@ namespace BasketStatz
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
-            displayContent.Content = new Menu_VM();
         }
-
-        private void Menu_Click(object sender, RoutedEventArgs e)
-        {
-            displayContent.Content = new Menu_VM();
-        }
-
-        private void SetStats_Click(object sender, RoutedEventArgs e)
-        {
-            displayContent.Content = new PlayerStatInput_VM();
-        }
-
-        private void PlayerGameStats_Click(object sender, RoutedEventArgs e)
-        {
-            displayContent.Content = new PlayerCareerStats_VM();
-        }
-
-        private void TeamGameStats_Click(object sender, RoutedEventArgs e)
-        {
-            displayContent.Content = new TeamGameStats_VM();
-        }
-
-        private void TeamSeasonStats_Click(object sender, RoutedEventArgs e)
-        {
-            displayContent.Content = new TeamSeasonStats_VM();
-        }
-
-
 
     }
 }

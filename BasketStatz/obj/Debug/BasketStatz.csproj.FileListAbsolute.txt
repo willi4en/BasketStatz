@@ -51,6 +51,7 @@ C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\bin\Debug\Syste
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\bin\Debug\K4os.Compression.LZ4.dll
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\bin\Debug\K4os.Hash.xxHash.dll
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\bin\Debug\MySql.Data.xml
+C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\obj\Debug\BasketStatz.csprojAssemblyReference.cache
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\obj\Debug\CustomControls\StatInputControl.g.cs
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\obj\Debug\Views\MainWindow.g.cs
 C:\Users\Ethan\OneDrive\Documents\GitHub\BasketStatz\BasketStatz\obj\Debug\Views\Menu_View.g.cs
